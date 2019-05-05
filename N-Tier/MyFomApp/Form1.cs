@@ -1,4 +1,5 @@
-﻿using DataModel;
+﻿using CircularButton;
+using DataModel;
 using MyClsLibrary;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace MyFomApp
 
         private void Newbutton_Click(object sender, EventArgs e)
         {
-            int id = (int)((Button)sender).Tag;
+            int id = (int)((MyButton)sender).Tag;
             dataGridView1.DataSource = DataControlCls.GetdataBy(id);
         }
 
@@ -49,13 +50,16 @@ namespace MyFomApp
             DataControlCls data = new DataControlCls();
             for (int i = 0; i < data.Getresult().Count; i++)
             {
-                Button newbutton;
+                MyButton newbutton;
 
                 this.flowLayoutPanel1.Controls.Add(
-                    newbutton = new Button
+                    newbutton = new MyButton
                     {
                         Tag = data.Getresult()[i].CategoriesID,
-                        Text = data.Getresult()[i].CategoriesName
+                        Text = data.Getresult()[i].CategoriesName,
+                        顏色 = Color.Red,
+                        點擊顏色 = Color.Purple,
+                        形狀 = MyButton.Fillstyle.Ellipse
                     });
                 newbutton.Click += Newbutton_Click;
             }

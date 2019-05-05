@@ -67,7 +67,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(885, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 442);
             this.dataGridView1.TabIndex = 1;
             // 
             // splitContainer1
@@ -83,16 +83,18 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(980, 308);
-            this.splitContainer1.SplitterDistance = 91;
+            this.splitContainer1.Size = new System.Drawing.Size(980, 442);
+            this.splitContainer1.SplitterDistance = 133;
             this.splitContainer1.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(91, 308);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(133, 442);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel1
@@ -101,7 +103,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(980, 25);
+            this.panel1.Size = new System.Drawing.Size(980, 35);
             this.panel1.TabIndex = 3;
             // 
             // splitContainer2
@@ -118,7 +120,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.label1);
             this.splitContainer2.Panel2.Controls.Add(this.textBox3);
-            this.splitContainer2.Size = new System.Drawing.Size(980, 25);
+            this.splitContainer2.Size = new System.Drawing.Size(980, 35);
             this.splitContainer2.SplitterDistance = 694;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -200,15 +202,15 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer1);
-            this.splitContainer3.Size = new System.Drawing.Size(980, 337);
-            this.splitContainer3.SplitterDistance = 25;
+            this.splitContainer3.Size = new System.Drawing.Size(980, 481);
+            this.splitContainer3.SplitterDistance = 35;
             this.splitContainer3.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 337);
+            this.ClientSize = new System.Drawing.Size(980, 481);
             this.Controls.Add(this.splitContainer3);
             this.Name = "Form1";
             this.Text = "Form1";
