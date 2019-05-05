@@ -14,35 +14,22 @@ namespace MyFomApp
 {
     public partial class Form1 : Form
     {
-        DataControlCls aa = new DataControlCls();
 
         public Form1()
         {
             InitializeComponent();
-            for (int i = 0; i < aa.Getresult().Count; i++)
-            {
-                Button newbutton;
-
-                this.flowLayoutPanel1.Controls.Add(
-                    newbutton = new Button
-                    {
-                        Tag = aa.Getresult()[i].CategoriesID,
-                        Text = aa.Getresult()[i].CategoriesName
-                    });
-                newbutton.Click += Newbutton_Click;
-            }
         }
 
         private void Newbutton_Click(object sender, EventArgs e)
         {
             int id = (int)((Button)sender).Tag;
-            dataGridView1.DataSource = aa.GetdataBy(id);
+            dataGridView1.DataSource = DataControlCls.GetdataBy(id);
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             string name = ((TextBox)sender).Text;
-            dataGridView1.DataSource = aa.GetdataBy(name);
+            dataGridView1.DataSource = DataControlCls.GetdataBy(name);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,9 +39,26 @@ namespace MyFomApp
             {
                 decimal max = maxresult;
                 decimal min = minresult;
-                dataGridView1.DataSource = aa.GetdataBy(min, max);
+                dataGridView1.DataSource = DataControlCls.GetdataBy(min, max);
             }
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DataControlCls data = new DataControlCls();
+            for (int i = 0; i < data.Getresult().Count; i++)
+            {
+                Button newbutton;
+
+                this.flowLayoutPanel1.Controls.Add(
+                    newbutton = new Button
+                    {
+                        Tag = data.Getresult()[i].CategoriesID,
+                        Text = data.Getresult()[i].CategoriesName
+                    });
+                newbutton.Click += Newbutton_Click;
+            }
         }
     }
 }

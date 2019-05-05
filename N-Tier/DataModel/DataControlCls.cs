@@ -22,8 +22,8 @@ namespace DataModel
     }
     public class DataControlCls
     {
-        CategoriesTableAdapter CategoriesAdapter = new CategoriesTableAdapter();
-        NWDataSet nwdataset = new NWDataSet();
+        static CategoriesTableAdapter CategoriesAdapter = new CategoriesTableAdapter();
+        static NWDataSet nwdataset = new NWDataSet();
 
         public DataControlCls()
         {
@@ -31,13 +31,13 @@ namespace DataModel
         }
 
 
-        public DataTable GetCategoriesData()
+        public  DataTable GetCategoriesData()
         {
             return nwdataset.Categories;
         }
 
 
-        public List<Categories> Getresult()
+        public  List<Categories> Getresult()
         {
             List<Categories> result = new List<Categories>();
 
@@ -47,16 +47,15 @@ namespace DataModel
                 {
                     CategoriesID = (int)(GetCategoriesData().Rows[i][0]),
                     CategoriesName = (GetCategoriesData().Rows[i][1]).ToString(),
-
                 });
             }
             return result;
         }
 
 
-        private static string sqlconn = ConfigurationManager.ConnectionStrings["DataModel.Properties.Settings.NorthwindConnectionString"].ConnectionString;
+        static string sqlconn = ConfigurationManager.ConnectionStrings["DataModel.Properties.Settings.NorthwindConnectionString"].ConnectionString;
 
-        public DataTable GetdataBy(int id)
+        public static DataTable GetdataBy(int id)
         {
             string sqlcmd = "Select * from Products where CategoryID = @CategoryID";
             SqlConnection conn = new SqlConnection(sqlconn);
@@ -76,7 +75,7 @@ namespace DataModel
         }
 
 
-        public DataTable GetdataBy(string name)
+        public static DataTable GetdataBy(string name)
         {
             string sqlcmd = "Select * from Products where ProductName = @ProductName";
             SqlConnection conn = new SqlConnection(sqlconn);
@@ -95,7 +94,7 @@ namespace DataModel
 
         }
 
-        public DataTable GetdataBy(decimal Minp, decimal Maxp)
+        public static DataTable GetdataBy(decimal Minp, decimal Maxp)
         {
             string sqlcmd = "Select * from Products where UnitPrice BETWEEN @Minp AND @Maxp";
             SqlConnection conn = new SqlConnection(sqlconn);
